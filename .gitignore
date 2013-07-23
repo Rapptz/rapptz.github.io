@@ -1,0 +1,3 @@
+# Ignore executables used internally to build pages
+*.exe
+
