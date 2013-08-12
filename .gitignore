@@ -1,3 +1,3 @@
-# Ignore executables used internally to build pages
+# Ignore executables and batch files used internally to build pages
 *.exe
-
+*.bat
