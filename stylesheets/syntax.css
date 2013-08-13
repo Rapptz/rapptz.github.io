@@ -1,0 +1,34 @@
+pre .preprocessor {
+    color: #A15151 !important;
+    font-weight: bold !important;
+}
+
+pre .comment,
+pre .template_comment,
+pre .diff .header,
+pre .javadoc {
+  color: #008000 !important;
+  font-style: normal !important;
+}
+
+pre .keyword {
+    color: #0000ff !important;
+    font-weight: normal !important;
+}
+
+pre .number {
+  color: #000 !important;
+}
+
+pre .built_in {
+  color: #2b91af !important;
+}
+
+pre .string {
+  color: #d14 !important;
+}
+
+pre .name_space {
+  color: #445588 !important;
+  font-weight: bold;
+}
