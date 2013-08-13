@@ -2,13 +2,32 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>{{ title }}</title>
+        <title>{% if current_section %}{{current_section.title}}{% endif %} - {{title}}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="{{css}}bootstrap.min.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="{{css}}syntax.css" media="screen">
     </head>
     <body>
-        {% block contents %}
-        {% endblock %}
+        <div class="navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="{{dir}}index.html">Home</a>
+                <div class="nav-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        {% for section in sections.values() %}
+                        <li {% if current_section and section.name == current_section.name %} class="active" {% endif %}>
+                            <a href="{{section.name}}.html">{{section.title}}</a>                            
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                {% block contents %}
+                {% endblock %}
+            </div>            
+        </div>        
         <script src="http://code.jquery.com/jquery.js"></script>
         <script src="{{js}}bootstrap.min.js"></script>
     </body>
