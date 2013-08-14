@@ -4,8 +4,8 @@
         <meta charset="utf-8">
         <title>{% if current_section %}{{current_section.title}}{% endif %} - {{title}}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="{{css}}bootstrap.min.css" media="screen">
-        <link rel="stylesheet" type="text/css" href="{{css}}syntax.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="{{dir}}{{css}}bootstrap.min.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="{{dir}}{{css}}syntax.css" media="screen">
     </head>
     <body>
         <div class="navbar-inverse navbar-fixed-top">
@@ -14,8 +14,8 @@
                 <div class="nav-collapse collapse">
                     <ul class="nav navbar-nav">
                         {% for section in sections.values() %}
-                        <li {% if current_section and section.name == current_section.name %} class="active" {% endif %}>
-                            <a href="{{section.name}}.html">{{section.title}}</a>                            
+                        <li{% if current_section and section.name == current_section.name %} class="active"{% endif %}>
+                            <a href="{{dir}}{{section.name}}.html">{{section.title}}</a>                            
                         </li>
                         {% endfor %}
                     </ul>
@@ -26,9 +26,9 @@
             <div class="row">
                 {% block contents %}
                 {% endblock %}
-            </div>            
-        </div>        
+            </div>
+        </div>
         <script src="http://code.jquery.com/jquery.js"></script>
-        <script src="{{js}}bootstrap.min.js"></script>
+        <script src="{{dir}}{{js}}bootstrap.min.js"></script>
     </body>
 </html>
